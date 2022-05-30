@@ -44,9 +44,10 @@ def get_info():
 def paint(a, b, correct_fun, euler_x, euler_y, milt_x, milt_y):
     x = np.arange(a, b, 0.01)
     ax = plt.gca()
-    ax.plot(x, correct_fun(x), "red", linewidth=1.5)
-    plt.plot(euler_x, euler_y, 'blue', linewidth=1.5)
-    plt.plot(milt_x, milt_y, 'orange', linewidth=1.5)
+    ax.plot(x, correct_fun(x), "red", linewidth=1.5, label='Точный')
+    ax.plot(euler_x, euler_y, 'blue', linewidth=1.5, label='Эйлер')
+    ax.plot(milt_x, milt_y, 'orange', linewidth=1.5, label='Милт')
+    plt.legend()
     plt.show()
 
 
@@ -58,5 +59,5 @@ def print_for_user(x_euler, y_euler, x_milt, y_milt, correct):
 
     print("Метод Милта:")
     print("%12.4s%12.4s%12.4s" % ("X", "Y", "correct Y"))
-    for i in range(0, len(x_euler)):
+    for i in range(0, len(x_milt)):
         print("%12.4f%12.4f%12.4f" % (round(x_milt[i], 5), round(y_milt[i], 5), round(correct(x_milt[i]), 5)))
