@@ -62,11 +62,11 @@ def paint(a, b, correct_fun, euler_x, euler_y, milt_x, milt_y):
 
 def print_for_user(x_euler, y_euler, x_milt, y_milt, correct):
     print("Метод Эйлера:")
-    print("%12.4s%12.4s%12.4s" % ("X", "Y", "correct Y"))
+    print("%12.8s%12.8s%12.8s" % ("X", "Y", "correct Y"))
     for i in range(0, len(x_euler)):
-        print("%12.4f%12.4f%12.4f" % (round(x_euler[i], 5), round(y_euler[i], 5), round(correct(x_euler[i]), 5)))
+        print("%12.8f%12.8f%12.8f" % (round(x_euler[i], 8), round(y_euler[i], 8), round(correct(x_euler[i]), 8)))
 
     print("Метод Милта:")
-    print("%12.4s%12.4s%12.4s" % ("X", "Y", "correct Y"))
+    print("%12.8s%12.8s%12.8s" % ("X", "Y", "correct Y"))
     for i in range(0, len(x_milt)):
-        print("%12.4f%12.4f%12.4f" % (round(x_milt[i], 5), round(y_milt[i], 5), round(correct(x_milt[i]), 5)))
+        print("%12.8f%12.8f%12.8f" % (round(x_milt[i], 8), round(y_milt[i], 8), round(correct(x_milt[i]), 8)))

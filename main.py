@@ -19,7 +19,7 @@ def method_updated_euler(fun, a, b, h, y0, e, n_max=-1):
             h /= 2
             continue
         yi = yi_next
-        xi = round(xi + h, 5)
+        xi = round(xi + h, 8)
         x_arr.append(xi)
         y_arr.append(yi)
         i += 1
@@ -32,8 +32,8 @@ def method_miln(fun, a, b, h, y0, e):
              fun(x_arr[1], y_arr[1]),
              fun(x_arr[2], y_arr[2]),
              fun(x_arr[3], y_arr[3])]
-    xi = round(x_arr[3] + h, 5)
-    n = int(round((b - x_arr[3]) / h, 5) + 4)
+    xi = round(x_arr[3] + h, 8)
+    n = int(round((b - x_arr[3]) / h, 8) + 4)
     for i in range(4, n):
         yi_predict = y_arr[i - 4] + 4 * h / 3 * (2 * f_arr[i - 3] - f_arr[i - 2] + 2 * f_arr[i - 1])
         while True:
