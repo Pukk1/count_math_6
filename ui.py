@@ -30,10 +30,19 @@ functions = {
 
 
 def get_info():
-    print("Выберите один из вариантов:")
-    for key, value in functions.items():
-        print(str(key), ": ", value["function"])
-    num = int(input())
+    while True:
+        try:
+            print("Выберите один из вариантов:")
+            for key, value in functions.items():
+                print(str(key), ": ", value["function"])
+            num = int(input())
+            if num < min(functions.items())[0] or num > max(functions.items())[0]:
+                print("Ошибка: данные должны быть в диапазоне: ", str(min(functions.items())[0]), " ... ",
+                      str(max(functions.items())[0]))
+                continue
+        except:
+            continue
+        break
     selected_val = functions[num]
     h = float(input("Введите шаг: "))
     e = float(input("Введите точность: "))
